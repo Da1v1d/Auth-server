@@ -1,0 +1,28 @@
+
+  
+  .regwindow{
+    border-radius: 15px;
+    width: 450px;
+    height: 500px;
+    background-image: linear-gradient(to right top, #f9fbfd, #f4f5f7, #eff0f1, #eaeaeb, #e5e5e5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .regtextinput{
+      margin-top: 10px;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .regtextinput div{
+      margin-top: 10px;
+  }
+
+  .confirmreg{
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
