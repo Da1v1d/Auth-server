@@ -5,13 +5,16 @@ import App from './App';
 import reducer from "./redux"
 import {Provider} from "react-redux";
 import {createStore} from "redux";
+import {BrowserRouter as Router} from "react-router-dom"
 
 const store=createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
-        <App />
-  </Provider>,
+      <Router>
+            <App />
+        </Router>
+</Provider>,
      document.getElementById('root')
 );
 
