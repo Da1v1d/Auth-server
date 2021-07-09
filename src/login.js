@@ -38,7 +38,7 @@ export default function Login(){
                 <TextField  value={password} onChange={e=>handlepassword(e)} variant="outlined" label="password"  style={{width:320}}/>
                 </div>
              <Link to={email==localStorage.getItem("email") && password==localStorage.getItem("password")?"/profile":"/login"}><Button onClick={click}>Login</Button></Link>
-                <Link to="/main"><Button>Back</Button></Link>
+                <Link to="/"><Button>Back</Button></Link>
 
         </div>
     )

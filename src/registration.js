@@ -97,7 +97,7 @@ export default function Registration(){
 
         function regclick(){
             localStorage.setItem("email",email)
-            localStorage.setItem("password",password)
+            if(password==repeatpassword) localStorage.setItem("password",password)
             localStorage.setItem("picture",picture)
             if(password==repeatpassword  ){
              dispatch({
@@ -166,16 +166,16 @@ export default function Registration(){
                <div className="regtextinput">
                    <form  >
                    <div>
-                       {(emaildirty && emailerror) && <div><p>{emailerror}</p></div>}
+                       {(emaildirty && emailerror) && <div style={{color:"red"}}><p>{emailerror}</p></div>}
                 <TextField name="email"  onChange={e=>emailhandler(e)} value={email}  onBlur={e=>blurhandler(e)} variant="outlined" label="email"  style={{width:320}}/>
 
                 </div>
                 <div>
-                    {(passworderror&& passworddirty) && <div><p>{passworderror}</p></div>}
+                    {(passworderror&& passworddirty) && <div style={{color:"red"}}><p>{passworderror}</p></div>}
                 <TextField name="password"  name="password" onChange={e=>passclick(e)} value={password}  onBlur={e=>blurhandler(e)} variant="outlined" label="password"  style={{width:320}}/>
                 </div>
                 <div>
-                {(repeatpassworderror&& repeatpassworddirty) && <div><p>{repeatpassworderror}</p></div>}
+                {(repeatpassworderror&& repeatpassworddirty) && <div style={{color:"red"}}><p>{repeatpassworderror}</p></div>}
                 <TextField name="repeatpassword"  name="repeatpassword"  onChange={e=>repeatpassclick(e)} value={repeatpassword} onBlur={e=>blurhandler(e)} variant="outlined" label="repeat-password"  style={{width:320}}/>
                 </div>
                 <div>
@@ -186,7 +186,7 @@ export default function Registration(){
 
                 <div className="confirmreg">
                 <Link to={password==repeatpassword?"/login":"/reg"} style={{textDecoration:"none"}}><Button disabled={!formvalid} type="submit" variant="contained" color="primary" style={{marginRight:70}} onClick={regclick} >Reg</Button></Link> 
-                <Link to="/main" style={{textDecoration:"none"}}><Button variant="contained" color="secondary"> Cancel</Button></Link>
+                <Link to="/" style={{textDecoration:"none"}}><Button variant="contained" color="secondary"> Cancel</Button></Link>
 
                 </div>
                 </div>
