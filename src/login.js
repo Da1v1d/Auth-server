@@ -21,12 +21,11 @@ export default function Login(){
 
         function click(){
             if(email==localStorage.getItem("email") && password==localStorage.getItem("password")){
-                settrue("profile")
                 console.log(localStorage.getItem("password"))
                 console.log(localStorage.getItem("email"))
                 alert("Welcome User")
             }
-            alert("wrong email or password")
+            else alert("wrong email or password")
         }
 
         

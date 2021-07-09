@@ -67,7 +67,7 @@ export default function Registration(){
 
     // const {register,handleSubmit}= useForm()
     useEffect(()=>{
-        if(emailerror || passworderror || repeatpassworderror && password==repeatpassword){
+        if(emailerror || passworderror || repeatpassworderror || password!==repeatpassword){
             setformvalid(false)
         }
         else {setformvalid(true)}
@@ -99,7 +99,7 @@ export default function Registration(){
             localStorage.setItem("email",email)
             localStorage.setItem("password",password)
             localStorage.setItem("picture",picture)
-            if(password===repeatpassword  ){
+            if(password==repeatpassword  ){
              dispatch({
                 type:"addaccount",
                 payload:{
@@ -175,7 +175,7 @@ export default function Registration(){
                 <TextField name="password"  name="password" onChange={e=>passclick(e)} value={password}  onBlur={e=>blurhandler(e)} variant="outlined" label="password"  style={{width:320}}/>
                 </div>
                 <div>
-                {(repeatpassworderror&& repeatpassworderror) && <div><p>{repeatpassworderror}</p></div>}
+                {(repeatpassworderror&& repeatpassworddirty) && <div><p>{repeatpassworderror}</p></div>}
                 <TextField name="repeatpassword"  name="repeatpassword"  onChange={e=>repeatpassclick(e)} value={repeatpassword} onBlur={e=>blurhandler(e)} variant="outlined" label="repeat-password"  style={{width:320}}/>
                 </div>
                 <div>
