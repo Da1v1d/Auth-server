@@ -5,5 +5,5 @@ export const createAccesToken = userId => {
 }
 
 export const createRefreshToken = userId => {
-    return sign( {userId}, 'secret-token', { expiresIn:'30d' } )
+    return sign( { userId }, 'secret-token', { expiresIn:'30d' } )
 }
